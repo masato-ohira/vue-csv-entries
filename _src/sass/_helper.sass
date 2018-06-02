@@ -1,0 +1,39 @@
+@charset "utf-8"
+
+//------------------------------------------------------------
+.hide-html
+  display: none
+
+.hide-sp
+  +mq(sp)
+    display: none
+
+.hide-pc
+  +mq(pc)
+    display: none
+
+.show-pc
+  display: none
+  +mq(pc)
+    display: block
+
+.show-sp
+  display: none
+  +mq(sp)
+    display: block
+
+//------------------------------------------------------------
+$class_name: (t: top, r: right, b: bottom, l: left)
+$size_arr: (ss: 8, sm: 15, md: 30, lg: 50)
+@each $n, $name in $class_name
+  @each $s, $size in $size_arr
+    .m#{$n}-#{$s}
+      margin-#{$name}: $size * 1px !important
+      +mq(sp)
+        margin-#{$name}: $size * 0.5px !important
+
+    .p#{$n}-#{$s}
+      padding-#{$name}: $size * 1px !important
+      +mq(sp)
+        padding-#{$name}: $size * 0.5px !important
+

@@ -1,0 +1,16 @@
+@charset "utf-8"
+
+=tile($w: 32, $margin: 0)
+  width: $w * 1%
+  // flex-basis: $w * 1%
+  $col: floor(100 / $w)
+  margin-right: (100 - ($w * $col)) / ($col - 1) * 1%
+  margin-top: $margin * 1px
+
+  &:nth-child(#{$col}n)
+    margin-right: 0
+
+  @for $i from 1 through $col
+    &:nth-child(#{$i})
+      margin-top: 0
+

@@ -1,0 +1,8 @@
+mixin pan(name)
+  .bread-crumb
+    ol.bread-crumb__list
+      li.bread-crumb__list-li
+        a(href='/') #{vars.site_name}
+      block
+      li.bread-crumb__list-li.is-current
+        span !{name}

@@ -1,0 +1,60 @@
+@charset "utf-8"
+
+=mb($size, $sp_size: false)
+  margin-bottom: $size * 1px
+  &:last-child
+    margin-bottom: 0
+
+  @if $sp_size
+    +mq(sp)
+      margin-bottom: $sp_size * 1px
+      &:last-child
+        margin-bottom: 0
+
+=mr($size, $sp_size: false)
+  margin-right: $size * 1px
+  &:last-child
+    margin-right: 0
+
+  @if $sp_size
+    +mq(sp)
+      margin-right: $sp_size * 1px
+      &:last-child
+        margin-right: 0
+
+=ml($size, $sp_size: false)
+  margin-left: $size * 1px
+  &:first-child
+    margin-left: 0
+
+  @if $sp_size
+    +mq(sp)
+      margin-left: $sp_size * 1px
+      &:first-child
+        margin-left: 0
+
+=mt($size, $sp_size: false)
+  margin-top: $size * 1px
+  &:first-child
+    margin-top: 0
+
+  @if $sp_size
+    +mq(sp)
+      margin-top: $sp_size * 1px
+      &:first-child
+        margin-top: 0
+
+=mtb($size, $sp_size: false)
+
+  &:not(:first-child)
+    margin-top: $size * 1px
+  &:not(:last-child)
+    margin-bottom: $size * 1px
+
+  @if $sp_size
+    +mq(sp)
+      &:not(:first-child)
+        margin-top: $sp_size * 1px
+      &:not(:last-child)
+        margin-bottom: $sp_size * 1px
+

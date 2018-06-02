@@ -1,0 +1,25 @@
+-
+  sugar.extend();
+
+  // var getURL = (key) => {
+  //   return store.pages[key].url;
+  // };
+  // var getTitle = (key) => {
+  //   var res = store.pages[key].page_name;
+  //   res = res.replace(/＿/g, '');
+  //   return res;
+  // };
+
+  const arrs = (n) => {
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+      arr.push(i);
+    }
+    return arr;
+  };
+
+  const nl2br = (str) => {
+    str = str.replace(/\r\n/g, '<br />');
+    str = str.replace(/(\n|\r)/g, '<br />');
+    return str;
+  };

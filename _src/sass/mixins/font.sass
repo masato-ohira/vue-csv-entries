@@ -1,0 +1,24 @@
+@charset "utf-8"
+
+=rem($size: 1, $sp_size: false)
+  // $ratio: 1
+  $ratio: 0.625
+  font-size: $size * $ratio * 1rem
+
+  @if $sp_size
+    +mq(sp)
+      font-size: $sp_size * $ratio * 1rem
+
+=line-height($size: 1, $sp_size: false)
+  $ratio: 0.625
+  line-height: $size * $ratio * 1rem
+  @if $sp_size
+    +mq(sp)
+      line-height: $sp_size * $ratio * 1rem
+
+=fz($size: 1, $sp_size: false)
+  font-size: $size * 0.625 * 1rem
+
+  @if $sp_size
+    +mq(sp)
+      font-size: $sp_size * 0.63 * 1rem

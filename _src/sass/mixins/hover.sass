@@ -1,0 +1,27 @@
+@charset "utf-8"
+
+=hover
+  &:hover
+    @content
+
+  // &[data-hover='touch']
+  //   @content
+  // &[data-hover='hover']
+  //   @content
+
+=ihover
+  .iphone &,
+  .ipod &,
+  .ipad &
+    &[data-hover='touch']
+      @content
+
+  .ua-pc &
+    &:hover
+      @content
+
+=u-line
+  text-decoration: underline
+
+  +hover
+    text-decoration: none

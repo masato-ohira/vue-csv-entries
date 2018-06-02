@@ -1,0 +1,19 @@
+@charset "utf-8"
+
+=allsize($size)
+  font-size: $size * 1px
+  width: $size * 1px
+  height: $size * 1px
+  line-height: $size * 1px
+
+=elps($line: 1)
+  @if $line == 1
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+
+  @else
+    overflow: hidden
+    display: -webkit-box
+    -webkit-box-orient: vertical
+    -webkit-line-clamp: $line

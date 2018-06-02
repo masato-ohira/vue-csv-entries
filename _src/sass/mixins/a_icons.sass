@@ -1,0 +1,65 @@
+@charset "utf-8"
+
+$color_pdf: #AF080A
+$color_xls: #1F7244
+$color_doc: #285295
+
+=a_icons
+  display: inline-block
+  $icon_size: 20
+
+  // =a_icon_styl
+  //   position: absolute
+  //   display: block
+  //   left: 0
+  //   top: 3px
+  //   // top: $icon_size * 0.5 * 1px
+  //   // margin-top: ($icon_size / 2) * -1px
+  //   +allsize($icon_size)
+
+  &[href*="@"],
+  &[href$="pdf"],
+  &[href$="csv"],
+  &[href$="doc"],
+  &[href$="docx"],
+  &[href$="txt"],
+  &[href$="text"],
+  &[href$="xls"],
+  &[href$="xlsx"]
+    position: relative
+    padding-left: ($icon_size + 3) * 1px
+
+  //   &:before
+  //     +a_icon_styl
+  //     +ion(ion-document)
+  //     text-align: center
+
+  // &[target="_blank"]
+  //   position: relative
+  //   padding-left: ($icon_size + 3) * 1px
+
+  //   &:before
+  //     +a_icon_styl
+  //     +ion(ion-ios-browsers-outline)
+
+  // &[href$="pdf"]
+  //   &:before
+  //     +ion(ion-document-text)
+  //     color: $color_pdf
+
+  // &[href$="csv"],
+  // &[href$="xls"],
+  // &[href$="xlsx"]
+  //   &:before
+  //     +ion(ion-document-text)
+  //     color: $color_xls
+
+  // &[href$="doc"],
+  // &[href$="docx"]
+  //   &:before
+  //     +ion(ion-document-text)
+  //     color: $color_doc
+
+  // &[href*="@"]
+  //   &:before
+  //     +ion(ion-android-mail)

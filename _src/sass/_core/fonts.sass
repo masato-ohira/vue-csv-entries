@@ -1,0 +1,13 @@
+@charset "utf-8"
+
+=noto
+  font-family: "Noto Sans Japanese", "Noto Sans", "Noto Sans CJK JP", sans-serif
+
+=ttl
+  font-family: 'source-han-serif-japanese', serif
+
+=letter($size: 1)
+  font-feature-settings: "palt" $size, "jp90"
+
+  .safari &
+    font-feature-settings: "pkna" 1

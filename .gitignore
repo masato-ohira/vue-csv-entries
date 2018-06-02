@@ -1,0 +1,56 @@
+# mySetting
+**/_sample/img
+_old
+_bk
+*.bak
+*.log
+._*
+*.map
+.ssh
+
+# Git
+.gitconfig
+
+# Mac OS
+.DS_Store
+.AppleDouble
+.AppleDesktop
+.AppleDB
+
+# Windows
+Thumbs.db
+
+# Dreamweaver
+_compareTemp
+_notes
+*.mno
+
+# Compass
+compass_start.bat
+.sass-cache
+
+# sublime
+sftp-config.json
+.sublime-grunt.cache
+.sublime-gulp.cache
+
+# node.js
+node_modules
+npm-debug.log
+.grunt
+sftpCache.json
+
+# ruby
+.bundle
+vendor
+
+# server
+.mysql_history
+.htaccess
+.bash_history
+.bash_logout
+.bash_profile
+.bashrc
+.vim
+.viminfo
+logs

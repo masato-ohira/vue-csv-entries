@@ -1,0 +1,36 @@
+@charset "utf-8"
+
+
+// media query
+//------------------------------------------------------------
+
+=mq-under($breakpoint)
+  @media screen and (max-width: $breakpoint)
+    @content
+
+=mq-over($breakpoint)
+  @media screen and (min-width: $breakpoint + 1)
+    @content
+
+=mq-between($breakpointSmall, $breakpointLarge)
+  @media screen and (min-width: $breakpointSmall + 1) and (max-width: $breakpointLarge)
+    @content
+
+// media query
+//------------------------------------------------------------
+=mq($point)
+  @if $point == pc
+    +mq-over($breakpoint)
+      @content
+  @else if $point == sp
+    +mq-under($breakpoint)
+      @content
+
+=print
+  @media print
+    @content
+
+=apple
+  .iphone &, .ipod &, .ipad &, .mac &
+    @content
+

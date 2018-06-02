@@ -1,0 +1,37 @@
+include /_core/_index
+include /_core/mixins/**/*
+
+-
+  const conf = {}
+
+block conf
+  -
+    conf.type = "normal"
+    conf.bodyID = null
+    conf.bodyClass = null
+
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    block meta
+      title #{vars.siteName}
+
+    //- ssiが利用可能な場合は
+    //- ssiのmixinを利用する
+
+    block cmn
+      //- +ssi("cmn")
+      include /_layouts/_cmn
+
+
+  body(id=conf.bodyID, class=conf.bodyClass)
+    block header
+      //- +ssi("header")
+      include /_layouts/_header
+    block main
+    block footer
+      //- +ssi("footer")
+    block body_end
+      //- +ssi("body_end")
+      include /_layouts/_body_end

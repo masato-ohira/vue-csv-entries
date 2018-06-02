@@ -1,0 +1,19 @@
+@charset "utf-8"
+
+=pos($size: 16, $left: 0, $right: auto)
+  position: absolute
+  top: 50%
+  margin-top: ($size / 2) * -1px
+  font-size: $size * 1px
+  width: $size * 1px
+  height: $size * 1px
+  line-height: $size * 1px
+  display: block
+
+  @if $right != auto
+    left: auto
+    right: $right * 1px
+  @else
+    right: auto
+    left: $left * 1px
+

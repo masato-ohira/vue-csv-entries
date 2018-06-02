@@ -1,0 +1,72 @@
+// @charset "utf-8";
+
+$color_c: #055070 !default;
+// $color_lc: #66c7f2 !default;
+// $color_bg_c: #cce8f5 !default;
+// $val_c: '055070' !default;
+// $bg_c: 'cce8f5' !default;
+
+// $color_m: #de3671 !default;
+// $color_lm: #f988c0 !default;
+// $color_bg_m: #fbe3ee !default;
+// $val_m: 'de3671' !default;
+// $bg_m: 'fbe3ee' !default;
+
+// $color_g: #01533b !default;
+// $color_lg: #89cd50 !default;
+// $color_bg_g: #cce7b5 !default;
+// $val_g: '01533b' !default;
+// $bg_g: 'cce7b5' !default;
+
+// $color_y: #f58134 !default;
+// $color_ly: #f4c946 !default;
+
+// $color_p: #2b4fad !default;
+// $color_lp: #7594e4 !default;
+// $color_bg_p: #dae4fe !default;
+// $val_p: '2b4fad' !default;
+// $bg_p: 'dae4fe' !default;
+
+// $color_sunlight: #d3a834 !default;
+
+// $colors:(
+//   walk1: (
+//     main: $color_c,
+//     light: $color_lc,
+//     bg: $color_bg_c,
+//     val: $val_c,
+//     val_bg: $bg_c,
+//   ),
+//   walk2: (
+//     main: $color_m,
+//     light: $color_lm,
+//     bg: $color_bg_m,
+//     val: $val_m,
+//     val_bg: $bg_m,
+//   ),
+//   walk3: (
+//     main: $color_g,
+//     light: $color_lg,
+//     bg: $color_bg_g,
+//     val: $val_g,
+//     val_bg: $bg_g,
+//   ),
+//   photo: (
+//     main: $color_y,
+//     light: $color_ly,
+//     // bg: $color_bg_y,
+//     // val: $val_y,
+//     // val_bg: $bg_y,
+//   ),
+//   column: (
+//     main: $color_p,
+//     light: $color_lp,
+//     bg: $color_bg_p,
+//     val: $val_p,
+//     val_bg: $bg_p,
+//   )
+// );
+
+// @function getColor($theme, $key) {
+//   @return map-get(map-get($colors, $theme), $key);
+// }

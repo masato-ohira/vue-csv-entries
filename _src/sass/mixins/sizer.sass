@@ -1,0 +1,21 @@
+@charset "utf-8"
+
+=sizer
+  width: $width-content
+  min-width: $width-content
+  margin: 0 auto
+
+  +mq(sp)
+    width: 100%
+    min-width: 100%
+
+  // @if $wide == wide
+  //   +mq(pc-w)
+  //     width: $widescreen
+
+=mysizer($size)
+  max-width: $size * 1px
+  margin: 0 auto
+
+  +mq(pc-m)
+    max-width: 100%
