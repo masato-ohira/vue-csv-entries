@@ -1,6 +1,6 @@
 <template lang='pug'>
 .v-csv-entries
-  .columns
+  section.columns
     .column
       .level.mb-sm
         .level-left
@@ -24,25 +24,30 @@
       .level.mb-sm
         .level-left
           label.label MTインポート形式
-        .level-right(v-if="entryStr")
+        .level-right(v-if="checkEntry()")
           a.button.is-outlined.is-info(
-            @click="entryCopy()"
-          ) テキストを選択する
+            @click="entrySelect()"
+          ) 全て選択する
       .v-csv-entries__result.box(ref="result")
         p(v-if="loading") 変換中...
         pre(
           v-for="i in entryStr"
-          v-html="setText(i)"
+          v-html="setEntry(i)"
         )
+
+  CsvEntriesSample(:entries="entryStr")
 
 </template>
 <script>
-import Sugar from 'sugar';
 import mixins from './mixins.js';
 import csv from 'csvtojson';
+import CsvEntriesSample from './csv-entries-sample.vue';
 
 export default {
   mixins: [mixins],
+  components: {
+    CsvEntriesSample,
+  },
   data() {
     return {
       csvStr: null,
@@ -75,20 +80,12 @@ export default {
       }
     },
 
-    entryCopy() {
+    entrySelect() {
       const self = this;
-      // let code = $(self.$refs.result).text();
-
-      // Rangeオブジェクトの取得
       let range = document.createRange();
-      // 範囲の指定
       range.selectNodeContents(self.$refs.result);
-
-      // Selectionオブジェクトを返す。ユーザが選択した範囲が格納されている
       let selection = window.getSelection();
-      // 選択をすべてクリア
       selection.removeAllRanges();
-      // 新規の範囲を選択に指定
       selection.addRange(range);
     },
 

@@ -4,35 +4,59 @@ import Sugar from 'sugar';
 
 const mixins = {
   methods: {
-    setText(obj) {
+    checkEntry(json) {
+      if (this.entryStr) {
+        if ( this.entryStr.length ) {
+          return true;
+        } else {
+          this.error = true;
+          return false;
+        }
+      } else {
+        return false;
+      }
+    },
+
+    setEntry(obj) {
       let date = Sugar.Date('now');
       // 05/31/2018 05:11:35 PM
-      let basename = obj.title.toLowerCase();
-      basename = basename.replace('\/', '_');
+
+      let basename = '';
+      if (obj.title) {
+        basename = obj.title.toLowerCase();
+        basename = basename.replace('\/', '_');
+      }
+
+      let setData = (data) => {
+        if (data) {
+          return data;
+        } else {
+          return '';
+        }
+      };
+
       return `AUTHOR: admin
-TITLE: ${obj.title}
-BASENAME: ${basename}
+TITLE: ${setData(obj.title)}
+BASENAME: ${setData(basename)}
 STATUS: Publish
 ALLOW COMMENTS: 1
 CONVERT BREAKS: richtext
 ALLOW PINGS: 1
 DATE: ${date.format('{MM}/{dd}/{yyyy} {hh}:{mm}:{ss} {TT}')}
-TAGS: ${obj.tag}
+TAGS: ${setData(obj.tag)}
 -----
 BODY:
-
+${setData(obj.body)}
 -----
 EXTENDED BODY:
-
+${setData(obj.extended_body)}
 -----
 EXCERPT:
-
+${setData(obj.excerpt)}
 -----
 KEYWORDS:
 ${obj.tag}, ${obj.title}
-
 -----
-
 
 --------`;
     },
