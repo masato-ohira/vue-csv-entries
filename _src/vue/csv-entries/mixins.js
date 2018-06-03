@@ -35,6 +35,23 @@ const mixins = {
         }
       };
 
+      let setCategory = (data) => {
+        if (data) {
+          return `PRIMARY CATEGORY: ${data}
+CATEGORY: ${data}`;
+        } else {
+          return '';
+        }
+      };
+
+      let setTag = (data) => {
+        if (data) {
+          return `TAGS: ${data}`;
+        } else {
+          return '';
+        }
+      };
+
       return `AUTHOR: admin
 TITLE: ${setData(obj.title)}
 BASENAME: ${setData(basename)}
@@ -43,7 +60,8 @@ ALLOW COMMENTS: 1
 CONVERT BREAKS: richtext
 ALLOW PINGS: 1
 DATE: ${date.format('{MM}/{dd}/{yyyy} {hh}:{mm}:{ss} {TT}')}
-TAGS: ${setData(obj.tag)}
+${setCategory(obj.category)}
+${setTag(obj.tag)}
 -----
 BODY:
 ${setData(obj.body)}
@@ -55,7 +73,7 @@ EXCERPT:
 ${setData(obj.excerpt)}
 -----
 KEYWORDS:
-${obj.tag}, ${obj.title}
+
 -----
 
 --------`;
